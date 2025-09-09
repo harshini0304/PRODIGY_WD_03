@@ -1,0 +1,128 @@
+/* Body & general layout */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Mode buttons */
+#mode {
+  margin-bottom: 20px;
+}
+
+#mode button {
+  margin: 5px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#mode button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Board styling */
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 10px;
+  background: #fff3;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Each cell styling */
+.cell {
+  width: 120px;
+  height: 120px;
+  background: #ffffffaa;
+  border-radius: 15px;
+  border: 3px solid #444;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cell:hover {
+  background: #fffa;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.cell.taken {
+  cursor: not-allowed;
+  color: #333;
+}
+
+/* Status text */
+#status {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* Play Again buttons */
+#playAgain {
+  display: none;
+  margin-top: 15px;
+  justify-content: center;
+  gap: 10px;
+}
+
+#playAgain button {
+  margin: 5px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#playAgain button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Winning highlight */
+.cell.winner {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  color: #fff;
+  animation: blink 0.8s infinite alternate;
+}
+
+@keyframes blink {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
