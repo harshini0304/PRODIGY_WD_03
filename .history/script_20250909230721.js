@@ -69,9 +69,9 @@ function handleMove(index) {
   }
 }
 
-/* 
+/* -------------------------
    AI WITH MINIMAX ALGORITHM
-    */
+   ------------------------- */
 function aiMove() {
   let bestScore = -Infinity;
   let move;
@@ -141,6 +141,9 @@ function minimax(newBoard, depth, isMaximizing, alpha, beta) {
   }
 }
 
+/* -------------------------
+   HELPER FUNCTIONS
+   ------------------------- */
 function checkWinner(player) {
   const combos = [
     [0,1,2],[3,4,5],[6,7,8],
